@@ -1,5 +1,5 @@
 import Styled from 'styled-components';
-import wood_bg from '../images/wood_bg.jpeg';
+import wood_bg from '../images/pier_bg.png';
 import { useState, useEffect, useRef } from 'react';
 
 const About = () => {
@@ -18,7 +18,7 @@ const About = () => {
 			return;
 		}
 
-		const visibleHeight = Math.min(containerHeight, windowHeight - containerTop);
+		const visibleHeight = Math.min(containerHeight, windowHeight - (containerTop * 2));
 		const percentageVisible = visibleHeight / containerHeight;
 
 		setOpacity(percentageVisible * 100);
@@ -52,9 +52,9 @@ const About = () => {
 };
 const Wrapper = Styled.div`
     width: 100vw;
-    height:200vh;
+    height:150vh;
     background: rgb(173,225,212);
-    background: linear-gradient(180deg, rgba(173,225,212,0) 0%, rgba(0,0,0,1) 25%);    
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%,rgba(0,0,0,.5) 25%, rgba(255,255,255,1) 75%, rgba(255,255,255,1) 100%);    
     position: relative;
     display: flex;
     flex-direction: column;
@@ -68,29 +68,28 @@ height: 100vh;
 width: 100vw;
 display: flex;
 flex-direction: column;
-justify-content: center;
 align-items: center;
 color: white;
 background-image: url(${wood_bg});
 background-size: cover;
 background-position: center;
 opacity: ${({ scrollpos }) => scrollpos}%;   
-
 font-size: 4rem;
 
-h1{
-    opacity: 0;
-  transform: translateY(10vh);
-  visibility: hidden;
-  transition: opacity 0.6s ease-in-out, transform 1s ease-in-out;
-  will-change: opacity, visibility;
+	h1{
+		margin-top: 2rem;
+		opacity: 0;
+		transform: translateY(15vh);
+		visibility: hidden;
+		transition: opacity 0.6s ease-in-out, transform 1s ease-in-out;
+		will-change: opacity, visibility;
 
-  &.is-visible {
-  opacity: 1;
-  transform: none;
-  visibility: visible;
-}
-}
+		&.is-visible {
+			opacity: 1;
+			transform: none;
+			visibility: visible;
+		}
+	}
 `;
 
 export default About;
