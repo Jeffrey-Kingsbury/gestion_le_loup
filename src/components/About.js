@@ -1,5 +1,5 @@
 import Styled from 'styled-components';
-import wood_bg from '../images/pier_bg.png';
+import wood_bg from '../images/house_bg.png';
 import { useState, useEffect, useRef } from 'react';
 
 const About = () => {
@@ -44,7 +44,6 @@ const About = () => {
 		<Wrapper>
 			<Container ref={containerRef} scrollpos={opacity}>
 				<h1 className={`fade-in-section ${isVisible ? 'is-visible' : ''}`} ref={domRef}>
-					ABOUT US
 				</h1>
 			</Container>
 		</Wrapper>
@@ -54,7 +53,7 @@ const Wrapper = Styled.div`
     width: 100vw;
     height:150vh;
     background: rgb(173,225,212);
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%,rgba(0,0,0,.5) 25%, rgba(255,255,255,1) 75%, rgba(255,255,255,1) 100%);    
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%,rgba(0,0,0,.5) 25%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%);    
     position: relative;
     display: flex;
     flex-direction: column;
