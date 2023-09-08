@@ -66,7 +66,6 @@ const Wrapper = Styled.div`
 const Logo = Styled.img`
 fill: white;
 width: 600px;
-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(67deg) brightness(105%) contrast(102%);
 `;
 
 const Navigation = Styled.nav`
@@ -75,7 +74,6 @@ const Navigation = Styled.nav`
     align-items: center;
     width: 100%;
     gap: 2rem;
-    color: white;
     font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
