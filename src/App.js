@@ -1,13 +1,9 @@
-import Header from './components/Header';
-import About from './components/About';
+import Main from './components/Main';
 
 function App() {
-
-
 	return (
 		<>
-			<Header />
-			<About id="about"/>
+			<Main />
 		</>
 	);
 }

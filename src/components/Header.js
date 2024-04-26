@@ -21,6 +21,7 @@ const Header = () => {
         const handleScroll = () => {
             let maxScroll = windowDimensions.height;  
             let opacity = (maxScroll - window.scrollY) / maxScroll ;
+            console.log(opacity * 100)
             opacity = Math.max(opacity, 0); 
             opacity = Math.min(opacity, 1);
             setScrollTop(opacity * 100);
@@ -42,7 +43,7 @@ const Header = () => {
 		<Wrapper className='bg-transparent'>
 			<Container scrollpos={scrollTop}>
 				<Logo src={logo} alt='logo' draggable="false"/>
-				<Navigation>
+				<Navigation scrollpos={scrollTop}>
 					<a href='#about'>About</a>
 					<a href='#services'>Services</a>
 					<a href='#testimonials'>Testimonials</a>
@@ -65,11 +66,12 @@ const Wrapper = Styled.div`
 
 const Logo = Styled.img`
 fill: white;
-width: 600px;
+max-height: 90%;
+max-width: 600px;
 `;
 
 const Navigation = Styled.nav`
-    display: flex;
+    display: ${({ scrollpos }) => scrollpos > 10 ? 'flex' : 'none'};
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -77,10 +79,11 @@ const Navigation = Styled.nav`
     font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
-
+    opacity: ${({ scrollpos }) => scrollpos}%;
 `;
 
 const Container = Styled.div`
+    top:0;
     user-select: none;
     position: fixed;
     display: flex;
@@ -88,8 +91,9 @@ const Container = Styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
-    opacity: ${({ scrollpos }) => scrollpos}%;
+    background: rgb(173,225,212);
+    transition: all .25s ease-in-out;
+    height: ${({ scrollpos }) => scrollpos < 5 ? 5 : scrollpos}vh;
     pointer-events: ${({ scrollpos }) => scrollpos < 40 ? 'none' : 'auto'};
 `;
 
