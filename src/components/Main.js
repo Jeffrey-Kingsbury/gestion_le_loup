@@ -1,110 +1,91 @@
 import styled, { keyframes } from 'styled-components';
 import logo from '../images/full_logo.svg';
-import logoAndText from '../images/Gestion-Le-Loup-Logo.png';
-import video from '../images/gllvideo.mp4';
-import splashBg from '../images/kitchen_bg.jpg';
-import Breaker from './Breaker';
+import splashBg from '../images/Sophie_Querbes_23101314536.jpg';
 import fsr from '../images/fsr.jpg';
 import res from '../images/residential.jpg';
 import QuoteCarosuel from './QuoteCarosuel';
-import bg from '../images/northernlights.jpg';
-import { useState, useEffect } from 'react';
-import Footer from './Footer';
+
+import Splash from './Splash';
+
+import arrorwIcon from '../images/down-chevron.png';
 import CarouselGll from './Carousel';
+import Form from './Form';
 
 const Main = () => {
-	useEffect(() => {
-		const preloadImages = () => {
-			[logo, splashBg, fsr, res].forEach((img) => {
-				new Image().src = img;
-			});
-		};
-		preloadImages();
-	}, []);
-	const serviceList = [
-		{ title: 'Rénovations complètes', img: fsr, desc: 'We offer full scale renovations' },
-		{ title: 'Residential', img: res, desc: 'We offer full scale renovations' },
-		{ title: 'Commercial', img: res, desc: 'We offer full scale renovations' },
-		{ title: 'Apres-Sinistre', img: 'fsr', desc: 'We offer full scale renovations' },
-		{ title: 'Terrace', img: 'fsr', desc: 'We offer full scale renovations' },
-	];
-	const [caro, setCaro] = useState(serviceList[0]);
-
 	return (
 		<>
 			<Wrapper>
-				<HeaderWrapper>
-					<LogoWrapper href=''>
-						<Logo
-							src={logoAndText}
-							alt='logo'
-							draggable='false'
-						/>
-					</LogoWrapper>
-					<Navigation>
-						<a href='#about'>A propos</a>
-						<a href='#services'>Nos services</a>
-						<a href='#testimonials'>Témoignages</a>
-						<a href='#contact'>Contactez nous</a>
-					</Navigation>
-				</HeaderWrapper>
-
-				<SplashWrapper>
-					<SplashLogo
-						src={logoAndText}
-						alt='logo'
-						draggable='false'
-					/>
-					<GeneralContractor>Entrepeneur Generale</GeneralContractor>
-					<Slogan>Votre vision, notre expertise</Slogan>
-				</SplashWrapper>
-
-				<Breaker text='About us' />
+				<Splash />
 				<AboutWrapper id='about'>
 					<p>
-						Établi en XXXX à Montréal,
-						<br /> nous sommes un entrepreneur général à service complet qui se spécialise dans les cuisines et les salles de bain
-						résidentielles, les terrasses, les cuisines commerciales et l'apres sinistre.
-					</p>
-					<p>
-						Nos Services:
+						<div>
+							Bienvenue chez Gestion Le Loup, votre spécialiste de la rénovation au service de la grande région de Montréal. <br />
+							Chez Gestion Le Loup, nous sommes fiers de livrer des rénovations de qualité qui conviennent à tous les budgets.
+						</div>
 						<br />
-						<ul>
-							<li>Rénovations complètes</li>
-							<li>Commercial</li>
-							<li>Residential</li>
-							<li>Terrace</li>
-							<li>Apres-Sinistre</li>
-						</ul>
+						<b>Expertise haut de gamme</b>
+						<br />
+						Notre équipe se spécialise dans les constructions haut de gamme, donnant vie avec passion à la vision du designer que vous avez
+						choisi. Bénéficiez de nos relations établies avec des sociétés de conception de premier plan, garantissant une collaboration
+						transparente pour votre projet.
+						<br />
+						<br />
+						<b>Reprise après sinistre</b>
+						<br />
+						En tant qu'entrepreneurs agréés, nous proposons des services post-catastrophe complets. Qu'il s'agisse de dégâts causés par une
+						inondation dans votre sous-sol ou d'une fuite sur le toit, comptez sur nous pour vous guider tout au long du processus de
+						reconstruction, transformant l'adversité en une opportunité d'améliorer votre maison.
+						<br />
+						<br />
+						<b>Rénovation extérieure</b>
+						<br />
+						Rehaussez l'extérieur de votre maison grâce à notre expertise en matière de terrasses en bois traité sous pression, de porches en
+						cèdre et de solutions extérieures haut de gamme. Quelle que soit la saison, notre équipe est prête à transformer vos espaces
+						extérieurs.
+						<br />
+						<br />
+						<b>Excellence commerciale</b>
+						<br />
+						Notre division commerciale excelle dans la création d'environnements axés sur le design pour les restaurants et les boutiques. Nous
+						avons géré avec succès les rénovations de certains des établissements préférés de Montréal.
+						<br />
+						<br />
+						<b>Expertise et partenariats</b>
+						<br />
+						Avec un réseau de sous-traitants de confiance, nous garantissons un service rapide et professionnel pour tous vos besoins. De la
+						toiture et de la plomberie à l'électricité, en passant par le CVC, le plâtre et la peinture, le carrelage, l'ébénisterie et la
+						menuiserie, notre équipe offre à chaque fois un savoir-faire de haut niveau.
+						<br />
+						<br />
+						<b>Approche centrée sur le client</b>
+						<br />
+						Chez Gestion Le Loup, nous priorisons une communication claire et l'accessibilité tout au long de chaque projet. Notre équipe de
+						direction s'engage à vous tenir informé et impliqué à chaque étape du processus de rénovation. Que vous ayez des questions, des idées
+						ou des préoccupations, nous sommes là pour vous écouter et vous fournir des conseils d'experts. Votre satisfaction est notre priorité
+						et notre engagement en faveur d'une communication transparente garantit une expérience fluide et sans stress du début à la fin.
+						<br />
+						<br />
+						<b>Établir des relations</b>
+						<br />
+						Nous sommes toujours désireux de nouer de nouveaux partenariats et de collaborer avec vos designers préférés. Faites l'expérience de
+						la différence avec Gestion Le Loup, où la qualité rencontre le dévouement.
+						<br />
+						<br />
+						Contactez-nous dès aujourd'hui pour discuter de votre projet de rénovation.
 					</p>
-					<ServicesVideoContainer>
-						<video
-							autoPlay
-							loop
-							muted
-						>
-							<source src={video}></source>
-						</video>
-					</ServicesVideoContainer>
 				</AboutWrapper>
 
-				{/* <Breaker text='Services' />
-				<ServicesWrapper id='services'>
-					<ServicesContainer></ServicesContainer>
-				</ServicesWrapper> */}
-
-				<Breaker text='Témoignages' />
 				<TestimonialWrapper id='testimonials'>
 					<TestimonialContainer>
 						<QuoteCarosuel />
+						<h1>Notre travail parle de lui-même</h1>
 						<CarouselGll />
 					</TestimonialContainer>
 				</TestimonialWrapper>
 
-				<Breaker text='Contact Us' />
-				<ContactWrapper id='contact'></ContactWrapper>
-
-				<Footer></Footer>
+				<ContactWrapper id='contact'>
+					<Form />
+				</ContactWrapper>
 			</Wrapper>
 		</>
 	);
@@ -115,134 +96,48 @@ const Wrapper = styled.div`
 	overflow-x: hidden;
 `;
 
-const HeaderWrapper = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 4rem;
-	width: 100%;
-	height: 100px;
-	position: fixed;
-	z-index: 999;
+const Bounce = keyframes`
+0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 `;
 
-const LogoWrapper = styled.a`
-	max-height: 90%;
-	max-width: 600px;
-	padding: 0 4rem;
-	box-sizing: border-box;
-	user-select: none;
-`;
-
-const Logo = styled.img`
-	max-height: 90px;
-	filter: brightness(0) invert(1);
-`;
-
-const SplashLogo = styled.img`
-	max-height: 200px;
-	filter: brightness(0) invert(1);
-	margin: 0;
-`;
-
-const Navigation = styled.nav`
-	font-family: 'Montserrat', sans-serif;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	padding: 0 4rem;
-	width: 100%;
-	gap: 2rem;
-	text-transform: uppercase;
-	user-select: none;
-	box-sizing: border-box;
-	a {
-		color: white;
-		text-decoration: none;
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-`;
-
-const SplashWrapper = styled.div`
-	width: 100vw;
-	height: 100dvh;
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 4rem;
-	background: url(${splashBg});
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	user-select: none;
-`;
-
-const Slogan = styled.h1`
-	color: white;
-	font-family: 'Montserrat', sans-serif;
-	font-size: 5rem;
-	text-align: center;
-`;
-
-const GeneralContractor = styled.h2`
-	color: white;
-	font-family: 'Montserrat', sans-serif;
-	font-size: 2rem;
-	text-align: center;
-	margin-top: -4rem;
-`;
 const AboutWrapper = styled.div`
 	width: 100vw;
-	height: 100dvh;
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 4rem;
+	flex-direction: column;
+	background-image: url(${res});
+	background-size: cover;
+	background-position: center;
 	p {
 		color: white;
 		font-family: 'Montserrat', sans-serif;
-		max-width: 600px;
-		font-size: xx-large;
-		background-color: rgba(0, 0, 0, 0.5);
+		width: 90%;
+		font-size: x-large;
+		background-color: rgba(0, 0, 0, 0.8);
 		padding: 4rem;
+		box-sizing: border-box;
+		@media only screen and (max-width: 650px) {
+			font-size: large;
+		}
+		div {
+			text-align: center;
+			font-size: 2.5rem;
+			@media only screen and (max-width: 650px) {
+				font-size: 1.25rem;
+			}
+		}
 	}
 `;
-
-const ServicesWrapper = styled.div`
-	width: 100vw;
-	height: 100dvh;
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-`;
-
-const ServicesContainer = styled.div`
-	width: 100%;
-	height: 100%;
-	display: flex;
-	background-image: url(${(props) => props.bg});
-	background-size: cover;
-	background-position: center;
-`;
-
-const ServicesVideoContainer = styled.div`
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	z-index: -1;
-	video {
-		max-height: 100dvh;
-		width: 100%;
-		object-fit: cover;
-	}
-`;
-
 const TestimonialWrapper = styled.div`
 	width: 100vw;
 	position: relative;
@@ -257,6 +152,11 @@ const TestimonialContainer = styled.div`
 	background-color: rgb(10, 10, 10);
 	width: 100%;
 	height: 100%;
+	h1 {
+		width: 100%;
+		text-align: center;
+		color: white;
+	}
 `;
 const ContactWrapper = styled.div`
 	width: 100vw;

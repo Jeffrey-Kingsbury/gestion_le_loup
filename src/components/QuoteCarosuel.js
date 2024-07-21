@@ -3,7 +3,7 @@ import { MDBCard, MDBCardBody, MDBCol, MDBContainer, MDBRow, MDBCarousel, MDBCar
 
 export default function QuoteCarosuel() {
 	return (
-		<section className='gradient-custom'>
+		<section className='gradient-custom h-100'>
 			<MDBContainer className='py-5 h-100'>
 				<MDBRow className='justify-content-center align-items-center h-100'>
 					<MDBCol xl='10'>
@@ -12,8 +12,9 @@ export default function QuoteCarosuel() {
 								<MDBCarousel
 									showControls
 									dark
+									pause
 								>
-									<MDBCarouselItem
+									{/* <MDBCarouselItem
 										className='active'
 										tag='div'
 									>
@@ -24,15 +25,6 @@ export default function QuoteCarosuel() {
 												xl='8'
 											>
 												<div className='d-flex'>
-													<div className='flex-shrink-0'>
-														<img
-															src='https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp'
-															className='rounded-circle mb-4 mb-lg-0 shadow-2'
-															alt='woman avatar'
-															width='90'
-															height='90'
-														/>
-													</div>
 													<div className='flex-grow-1 ms-4 ps-3'>
 														<figure>
 															<MDBTypography
@@ -45,13 +37,51 @@ export default function QuoteCarosuel() {
 																		icon='quote-left fa-lg text-warning me-2'
 																	/>
 																	<span className='font-italic'>
-																		Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sint nesciunt ad itaque aperiam expedita
-																		officiis incidunt minus facere, molestias quisquam impedit inventore.
+																		I highly recommend working with Gestion LeLoup for any renovation or building project. I've hired Wolfgang
+																		and his team to do both a major basement renovation and a balcony rebuild, and both times I was thrilled with
+																		the final result. Wolf holds himself to a very high standard of craftsmanship, materials, safety standards,
+																		as well as the beauty of the finished product. The projects were well thought-out, and I was consulted
+																		throughout the construction period about any modifications or unforeseen complications that arose. His team
+																		of builders, carpenters and tradesmen are professional, respectful and friendly.
+																	</span>
+																</p>
+															</MDBTypography>
+															<figcaption className='blockquote-footer mb-0'>Melissa</figcaption>
+														</figure>
+													</div>
+												</div>
+											</MDBCol>
+										</MDBRow>
+									</MDBCarouselItem> */}
+
+									<MDBCarouselItem tag='div'>
+										<MDBRow className='justify-content-center'>
+											<MDBCol
+												md='8'
+												lg='9'
+												xl='8'
+											>
+												<div className='d-flex'>
+													<div className='flex-grow-1 ms-4 ps-3'>
+														<figure>
+															<MDBTypography
+																blockquote
+																className='mb-4'
+															>
+																<p>
+																	<MDBIcon
+																		fas
+																		icon='quote-left fa-lg text-warning me-2'
+																	/>
+																	<span className='font-italic'>
+																		It was a genuine pleasure to work with Wolf and the entire Le Loup team. We are thrilled with the way our
+																		renovation turned out under their care. The entire team was professional, organized, timely, pleasant and
+																		knowledgeable. They understood and delivered exactly what we wanted, we will certainly work with them again!
 																	</span>
 																</p>
 															</MDBTypography>
 															<figcaption className='blockquote-footer mb-0'>
-																Miranda Smith in <cite title='Source Title'>The Guardian</cite>
+																Allison Cunningham <cite title='Source Title'>co-founder Restaurant Joe Beef</cite>
 															</figcaption>
 														</figure>
 													</div>
@@ -68,15 +98,6 @@ export default function QuoteCarosuel() {
 												xl='8'
 											>
 												<div className='d-flex'>
-													<div className='flex-shrink-0'>
-														<img
-															src='https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp'
-															className='rounded-circle mb-4 mb-lg-0 shadow-2'
-															alt='woman avatar'
-															width='90'
-															height='90'
-														/>
-													</div>
 													<div className='flex-grow-1 ms-4 ps-3'>
 														<figure>
 															<MDBTypography
@@ -89,14 +110,13 @@ export default function QuoteCarosuel() {
 																		icon='quote-left fa-lg text-warning me-2'
 																	/>
 																	<span className='font-italic'>
-																		Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-																		aperiam, eaque ipsa quae ab illo inventore veritatis.
+																		We couldn't be happier with the work done by Gestion Le Loup! Their attention to detail and craftsmanship
+																		transformed our house beyond our expectations. The team was professional, punctual, and communicative
+																		throughout the entire process. Highly recommend for anyone looking to renovate their home
 																	</span>
 																</p>
 															</MDBTypography>
-															<figcaption className='blockquote-footer mb-0'>
-																Annie Hall <cite title='Source Title'>New York Times</cite>
-															</figcaption>
+															<figcaption className='blockquote-footer mb-0'>Ryan and Chelsea</figcaption>
 														</figure>
 													</div>
 												</div>
@@ -112,15 +132,6 @@ export default function QuoteCarosuel() {
 												xl='8'
 											>
 												<div className='d-flex'>
-													<div className='flex-shrink-0'>
-														<img
-															src='https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp'
-															className='rounded-circle mb-4 mb-lg-0 shadow-2'
-															alt='woman avatar'
-															width='90'
-															height='90'
-														/>
-													</div>
 													<div className='flex-grow-1 ms-4 ps-3'>
 														<figure>
 															<MDBTypography
@@ -133,14 +144,48 @@ export default function QuoteCarosuel() {
 																		icon='quote-left fa-lg text-warning me-2'
 																	/>
 																	<span className='font-italic'>
-																		At vero eos et accusamus et iusto odio dignissimos qui blanditiis praesentium voluptatum deleniti atque
-																		corrupti quos dolores et quas molestias excepturi sint amet dolore.
+																		Working with Gestion Le Loup on our basement renovation was an absolute pleasure. Their attention to detail,
+																		professionalism, and commitment to quality craftsmanship exceeded our expectations. We are thrilled with the
+																		final result—a beautifully transformed space that perfectly aligns with our vision. I highly recommend
+																		Gestion Le Loup for any home renovation project.
 																	</span>
 																</p>
 															</MDBTypography>
-															<figcaption className='blockquote-footer mb-0'>
-																Jason More in <cite title='Source Title'>Smash Magazine</cite>
-															</figcaption>
+															<figcaption className='blockquote-footer mb-0'>Stephen</figcaption>
+														</figure>
+													</div>
+												</div>
+											</MDBCol>
+										</MDBRow>
+									</MDBCarouselItem>
+
+									<MDBCarouselItem tag='div'>
+										<MDBRow className='justify-content-center'>
+											<MDBCol
+												md='8'
+												lg='9'
+												xl='8'
+											>
+												<div className='d-flex'>
+													<div className='flex-grow-1 ms-4 ps-3'>
+														<figure>
+															<MDBTypography
+																blockquote
+																className='mb-4'
+															>
+																<p>
+																	<MDBIcon
+																		fas
+																		icon='quote-left fa-lg text-warning me-2'
+																	/>
+																	<span className='font-italic'>
+																		We worked with Gestion Leloup in the Spring of 2021 to renovate our basement. They did a great job, the
+																		basement was beautifully finished in a timely manner. Wolf was great to work with, conscientious , efficient
+																		and honest. 10/10 would recommend!
+																	</span>
+																</p>
+															</MDBTypography>
+															<figcaption className='blockquote-footer mb-0'>Carina and James</figcaption>
 														</figure>
 													</div>
 												</div>
