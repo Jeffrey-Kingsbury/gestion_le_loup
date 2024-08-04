@@ -92,7 +92,6 @@ const Main = () => {
 };
 
 const Wrapper = styled.div`
-	height: 100%;
 	overflow-x: hidden;
 `;
 
@@ -109,7 +108,8 @@ const Bounce = keyframes`
 `;
 
 const AboutWrapper = styled.div`
-	width: 100vw;
+	width: 100dvw;
+	min-height: 150dvh;
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -124,10 +124,12 @@ const AboutWrapper = styled.div`
 		width: 90%;
 		font-size: x-large;
 		background-color: rgba(0, 0, 0, 0.8);
-		padding: 4rem;
+		padding: 1rem 4rem;
 		box-sizing: border-box;
 		@media only screen and (max-width: 650px) {
 			font-size: large;
+			padding: 1rem;
+			width: 95%;
 		}
 		div {
 			text-align: center;
@@ -159,13 +161,10 @@ const TestimonialContainer = styled.div`
 	}
 `;
 const ContactWrapper = styled.div`
-	width: 100vw;
-	height: 100dvh;
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 4rem;
 `;
 
 export default Main;

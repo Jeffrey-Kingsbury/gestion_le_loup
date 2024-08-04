@@ -14,9 +14,6 @@ const Splash = () => {
 				Entrepeneur Generale
 				<hr />
 				Votre vision, notre expertise
-				<br />
-				<br />
-				<a href='#contact'>Contactez nous</a>
 			</GeneralContractor>
 		</Wrapper>
 	);

@@ -31,11 +31,12 @@ const Form = () => {
 
 	return (
 		<Wrapper>
-			<Fader></Fader>
-			<h1>Nous sont là pour aider</h1>
-			<br />
-			<h4>Envoyez-nous un message en nous indiquant les changements que vous souhaitez apporter et nous vous contacterons.</h4>
-			<hr />
+			<Fader />
+			<span>
+				<h1>Nous sont là pour aider</h1>
+				<br />
+				<h4>Envoyez-nous un message en nous indiquant les changements que vous souhaitez apporter et nous vous contacterons.</h4>
+			</span>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<div>{result}</div>
 				<div className='flex mb-6 space-x-4'>
@@ -140,7 +141,7 @@ const Form = () => {
 						required
 					></textarea>
 				</div>
-				<div className='mb-6'>
+				<div>
 					<button
 						type='Soumettre'
 						className='w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none'
@@ -159,8 +160,6 @@ const Fader = styled.div`
 	background: linear-gradient(180deg, rgba(10, 10, 10, 1) 0%, rgba(255, 255, 255, 0) 100%);
 	height: 300px;
 	width: 100%;
-	position: absolute;
-	top: 0;
 `;
 const Wrapper = styled.div`
 	width: 100%;
@@ -168,23 +167,35 @@ const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	background-color: black;
 	background: url(${bg});
 	background-position: center;
 	background-size: cover;
+	padding: 0 0 4rem 0;
 
+	span {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 	h1,
 	h4 {
 		color: white;
 		text-align: center;
-		padding: 0 3rem;
+		width: 80%;
 	}
 
 	form {
 		background-color: rgba(10, 10, 10, 0.85);
-		padding: 3rem;
+		padding: 1rem 3rem;
 		border-radius: 15px;
+		@media only screen and (max-width: 650px) {
+			max-width: 90%;
+			padding: 1rem 1rem;
+		}
 	}
 `;
 
@@ -192,8 +203,6 @@ const Plug = styled.p`
 	width: 100%;
 	text-align: center;
 	color: white;
-	bottom: 0;
-	position: absolute;
 	font-size: 0.85rem;
 `;
 
