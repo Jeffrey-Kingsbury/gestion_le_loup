@@ -193,6 +193,44 @@ export default function QuoteCarosuel() {
 											</MDBCol>
 										</MDBRow>
 									</MDBCarouselItem>
+
+									<MDBCarouselItem tag='div'>
+										<MDBRow className='justify-content-center'>
+											<MDBCol
+												md='8'
+												lg='9'
+												xl='8'
+											>
+												<div className='d-flex'>
+													<div className='flex-grow-1 ms-4 ps-3'>
+														<figure>
+															<MDBTypography
+																blockquote
+																className='mb-4'
+															>
+																<p>
+																	<MDBIcon
+																		fas
+																		icon='quote-left fa-lg text-warning me-2'
+																	/>
+																	<span className='font-italic'>
+																		Je recommande fortement de faire affaire avec Gestion LeLoup pour tout projet de rénovation ou de
+																		construction. J’ai engagé Wolfgang et son équipe pour une importante rénovation de sous-sol et la
+																		reconstruction d’un balcon, et j’ai été ravie du résultat final à chaque fois. Wolf se fixe des normes très
+																		élevées en matière de savoir-faire, de matériaux, de sécurité et d’esthétique du produit fini. Les projets
+																		étaient bien conçus et j’ai été consultée tout au long des travaux pour toute modification ou complication
+																		imprévue. Son équipe de constructeurs, de charpentiers et de professionnels du métier est professionnelle,
+																		respectueuse et sympathique.{' '}
+																	</span>
+																</p>
+															</MDBTypography>
+															<figcaption className='blockquote-footer mb-0'>Mellisa</figcaption>
+														</figure>
+													</div>
+												</div>
+											</MDBCol>
+										</MDBRow>
+									</MDBCarouselItem>
 								</MDBCarousel>
 							</MDBCardBody>
 						</MDBCard>
