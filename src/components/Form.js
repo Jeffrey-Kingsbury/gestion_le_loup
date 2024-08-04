@@ -39,7 +39,7 @@ const Form = () => {
 			</span>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<div>{result}</div>
-				<div className='flex mb-6 space-x-4'>
+				<div className='flex mb-3 space-x-4'>
 					<div className='w-full md:w-1/2'>
 						<label
 							htmlFor='fname'
@@ -74,7 +74,7 @@ const Form = () => {
 					</div>
 				</div>
 
-				<div className='flex mb-6 space-x-4'>
+				<div className='flex mb-3 space-x-4'>
 					<div className='w-full md:w-1/2'>
 						<label
 							htmlFor='email'
@@ -160,6 +160,9 @@ const Fader = styled.div`
 	background: linear-gradient(180deg, rgba(10, 10, 10, 1) 0%, rgba(255, 255, 255, 0) 100%);
 	height: 300px;
 	width: 100%;
+	top: 0;
+	position: absolute;
+	z-index: 0;
 `;
 const Wrapper = styled.div`
 	width: 100%;
@@ -173,22 +176,24 @@ const Wrapper = styled.div`
 	background-position: center;
 	background-size: cover;
 	padding: 0 0 4rem 0;
-
 	span {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		z-index: 99;
 	}
 	h1,
 	h4 {
 		color: white;
 		text-align: center;
 		width: 80%;
+		z-index: 99;
 	}
 
 	form {
+		z-index: 99;
 		background-color: rgba(10, 10, 10, 0.85);
 		padding: 1rem 3rem;
 		border-radius: 15px;

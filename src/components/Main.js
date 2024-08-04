@@ -78,7 +78,7 @@ const Main = () => {
 				<TestimonialWrapper id='testimonials'>
 					<TestimonialContainer>
 						<QuoteCarosuel />
-						<h1>Notre travail parle de lui-même</h1>
+						<h1>La qualité de notre travail est notre meilleure référence.</h1>
 						<CarouselGll />
 					</TestimonialContainer>
 				</TestimonialWrapper>

@@ -74,9 +74,10 @@ export default function QuoteCarosuel() {
 																		icon='quote-left fa-lg text-warning me-2'
 																	/>
 																	<span className='font-italic'>
-																		It was a genuine pleasure to work with Wolf and the entire Le Loup team. We are thrilled with the way our
-																		renovation turned out under their care. The entire team was professional, organized, timely, pleasant and
-																		knowledgeable. They understood and delivered exactly what we wanted, we will certainly work with them again!
+																		Ce fut un réel plaisir de travailler avec Wolf et toute l’équipe de Le Loup. Nous sommes ravis du résultat de
+																		notre rénovation sous leur supervision. Toute l’équipe a été professionnelle, organisée, ponctuelle, agréable
+																		et compétente. Ils ont compris et livré exactement ce que nous voulions. Nous travaillerons certainement avec
+																		eux à nouveau!
 																	</span>
 																</p>
 															</MDBTypography>
@@ -110,9 +111,9 @@ export default function QuoteCarosuel() {
 																		icon='quote-left fa-lg text-warning me-2'
 																	/>
 																	<span className='font-italic'>
-																		We couldn't be happier with the work done by Gestion Le Loup! Their attention to detail and craftsmanship
-																		transformed our house beyond our expectations. The team was professional, punctual, and communicative
-																		throughout the entire process. Highly recommend for anyone looking to renovate their home
+																		Nous ne pourrions être plus satisfaits du travail effectué par Gestion Le Loup! Leur souci du détail et leur
+																		savoir-faire ont transformé notre maison au-delà de nos attentes. L’équipe a été professionnelle, ponctuelle
+																		et communicative tout au long du processus. Hautement recommandé pour quiconque souhaite rénover sa maison.
 																	</span>
 																</p>
 															</MDBTypography>
@@ -144,10 +145,10 @@ export default function QuoteCarosuel() {
 																		icon='quote-left fa-lg text-warning me-2'
 																	/>
 																	<span className='font-italic'>
-																		Working with Gestion Le Loup on our basement renovation was an absolute pleasure. Their attention to detail,
-																		professionalism, and commitment to quality craftsmanship exceeded our expectations. We are thrilled with the
-																		final result—a beautifully transformed space that perfectly aligns with our vision. I highly recommend
-																		Gestion Le Loup for any home renovation project.
+																		Travailler avec Gestion Le Loup pour la rénovation de notre sous-sol a été un véritable plaisir. Leur souci
+																		du détail, leur professionnalisme et leur engagement envers un travail de qualité ont dépassé nos attentes.
+																		Nous sommes ravis du résultat final – un espace magnifiquement transformé qui correspond parfaitement à notre
+																		vision. Je recommande fortement Gestion Le Loup pour tout projet de rénovation domiciliaire.
 																	</span>
 																</p>
 															</MDBTypography>
@@ -179,9 +180,9 @@ export default function QuoteCarosuel() {
 																		icon='quote-left fa-lg text-warning me-2'
 																	/>
 																	<span className='font-italic'>
-																		We worked with Gestion Leloup in the Spring of 2021 to renovate our basement. They did a great job, the
-																		basement was beautifully finished in a timely manner. Wolf was great to work with, conscientious , efficient
-																		and honest. 10/10 would recommend!
+																		Nous avons travaillé avec Gestion LeLoup au printemps 2021 pour rénover notre sous-sol. Ils ont fait un
+																		excellent travail, le sous-sol a été magnifiquement fini en temps opportun. Wolf était super à travailler,
+																		consciencieux, efficace et honnête. 10/10, je recommande!
 																	</span>
 																</p>
 															</MDBTypography>
