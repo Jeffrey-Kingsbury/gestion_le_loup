@@ -82,7 +82,7 @@ const CarouselGll = () => {
 		{ src: twelve, width: 576, height: 720 },
 		{ src: thirteen, width: 960, height: 720 },
 		{ src: fourteen, width: 540, height: 720 },
-		//{ src: fifteen, width: 540, height: 720 },
+		{ src: fifteen, width: 540, height: 720 },
 		{ src: sixteen, width: 1280, height: 1595 },
 		{ src: seventeen, width: 1280, height: 1257 },
 		{ src: eighteen, width: 1280, height: 1277 },

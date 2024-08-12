@@ -33,9 +33,8 @@ const Form = () => {
 		<Wrapper>
 			<Fader />
 			<span>
-				<h1>Nous sont là pour aider</h1>
+				<h4>Veuillez nous contacter et l'un de nos spécialistes vous répondra sous peu</h4>
 				<br />
-				<h4>Envoyez-nous un message en nous indiquant les changements que vous souhaitez apporter et nous vous contacterons.</h4>
 			</span>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<div>{result}</div>
