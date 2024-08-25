@@ -17,7 +17,7 @@ const Main = () => {
 			<Wrapper>
 				<Splash />
 				<AboutWrapper id='about'>
-					<p>
+					<AboutContainer>
 						<div>
 							Bienvenue chez Gestion Le Loup, votre spécialiste de la rénovation au service de la grande région de Montréal. <br />
 							Chez Gestion Le Loup, nous sommes fiers de livrer des rénovations de qualité qui conviennent à tous les budgets.
@@ -72,7 +72,7 @@ const Main = () => {
 						<br />
 						<br />
 						Contactez-nous dès aujourd'hui pour discuter de votre projet de rénovation.
-					</p>
+					</AboutContainer>
 				</AboutWrapper>
 
 				<TestimonialWrapper id='testimonials'>
@@ -137,6 +137,29 @@ const AboutWrapper = styled.div`
 			@media only screen and (max-width: 650px) {
 				font-size: 1.25rem;
 			}
+		}
+	}
+`;
+
+const AboutContainer = styled.div`
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	width: 90%;
+	font-size: x-large;
+	background-color: rgba(0, 0, 0, 0.8);
+	padding: 1rem 4rem;
+	box-sizing: border-box;
+	@media only screen and (max-width: 650px) {
+		font-size: large;
+		padding: 1rem;
+		width: 95%;
+	}
+
+	div {
+		text-align: center;
+		font-size: 2.5rem;
+		@media only screen and (max-width: 650px) {
+			font-size: 1.25rem;
 		}
 	}
 `;

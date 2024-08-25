@@ -12,7 +12,7 @@ export default function QuoteCarosuel() {
 								<MDBCarousel
 									showControls
 									dark
-									pause
+									pause='true'
 								>
 									{/* <MDBCarouselItem
 										className='active'

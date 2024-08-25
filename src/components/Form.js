@@ -1,33 +1,54 @@
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import useWeb3Forms from '@web3forms/react';
 import styled from 'styled-components';
 import bg from '../images/northernlights.jpg';
+import FileUploader from './FileUploader';
 const Form = () => {
-	const { register, reset, handleSubmit } = useForm();
-
-	const [isSuccess, setIsSuccess] = useState(false);
 	const [result, setResult] = useState(null);
 
-	const accessKey = 'ae32d21c-cb9f-430c-83d7-d6fe791fb6a5';
+	const checkFiles = (e) => {
+		const files = e.target.files;
+		const size = 7000000; // 7MB
+		let err = '';
+		let totalSize = 0;
+		//check if all files total are over 7MB
+		for (let x = 0; x < files.length; x++) {
+			totalSize += files[x].size;
+		}
+		if (totalSize > size) {
+			err += 'La taille totale des fichiers est trop grande, veuillez choisir des fichiers plus petits \n(Max. 7MB)\n';
+		} else {
+			for (let x = 0; x < files.length; x++) {
+				if (files[x].size > size) {
+					err += files[x].name + ' est trop grand, veuillez choisir un fichier plus petit \n(Max. 7MB)\n';
+				}
+			}
+		}
+		if (err !== '') {
+			e.target.value = null; // discard selected file
+			alert(err);
+			return false;
+		}
+		return true;
+	};
 
-	const { submit: onSubmit } = useWeb3Forms({
-		access_key: accessKey,
-		settings: {
-			from_name: 'GLL',
-			subject: 'New Contact Message from your Website',
-		},
-		onSuccess: (msg, data) => {
-			setIsSuccess(true);
-			setResult('Courriel envoyé avec succès!');
-			console.log(msg);
-			reset();
-		},
-		onError: (msg, data) => {
-			setIsSuccess(false);
-			setResult("Une erreur s'est produite, veuillez réessayer");
-		},
-	});
+	const onSubmit = async (event) => {
+		event.preventDefault();
+		const formData = new FormData(event.target);
+
+		formData.append('access_key', 'ae32d21c-cb9f-430c-83d7-d6fe791fb6a5');
+
+		const res = await fetch('https://api.web3forms.com/submit', {
+			method: 'POST',
+			body: formData,
+		}).then((res) => res.json());
+
+		if (res.success) {
+			setResult('Votre message a été envoyé avec succès!');
+			event.target.reset();
+		} else {
+			setResult("Oops! Quelque chose s'est mal passé. Veuillez réessayer");
+		}
+	};
 
 	return (
 		<Wrapper>
@@ -36,20 +57,25 @@ const Form = () => {
 				<h4>Veuillez nous contacter et l'un de nos spécialistes vous répondra sous peu</h4>
 				<br />
 			</span>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<div>{result}</div>
+			<form onSubmit={onSubmit}>
+				<div
+					className='text-white text-center'
+					style={{ fontSize: 'larger', textDecoration: 'underline' }}
+				>
+					{result}
+				</div>
 				<div className='flex mb-3 space-x-4'>
 					<div className='w-full md:w-1/2'>
 						<label
-							htmlFor='fname'
+							htmlFor='first_name'
 							className='block mb-2 text-sm text-gray-200'
 						>
 							Prénom
 						</label>
 						<input
 							type='text'
-							{...register('name', { required: true })}
 							id='first_name'
+							name='first_name'
 							placeholder='John'
 							required
 							className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
@@ -57,15 +83,15 @@ const Form = () => {
 					</div>
 					<div className='w-full md:w-1/2'>
 						<label
-							htmlFor='lname'
+							htmlFor='last_name'
 							className='block mb-2 text-sm text-gray-200'
 						>
 							Nom
 						</label>
 						<input
 							type='text'
-							{...register('lastName', { required: true })}
-							id='lname'
+							id='last_name'
+							name='last_name'
 							placeholder='Doe'
 							required
 							className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
@@ -83,8 +109,8 @@ const Form = () => {
 						</label>
 						<input
 							type='email'
-							{...register('email', { required: true })}
 							id='email'
+							name='email'
 							placeholder='you@company.com'
 							required
 							className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
@@ -109,20 +135,23 @@ const Form = () => {
 					</div>
 				</div>
 
-				{/* <div className='mb-6'>
+				<div className='mb-6'>
 					<label
-						htmlFor='message'
+						htmlFor='attachment'
 						className='block mb-2 text-sm text-gray-200'
 					>
 						Attacher des images (.jpg / .png)
 					</label>
-					<input
+					<FileUploader />
+					{/* <inputs
 						type='file'
+						onChange={(e) => checkFiles(e)}
+						data-advanced='true'
 						name='attachment'
 						multiple
 						accept='.jpg, .png, .jpeg'
-					/>
-				</div> */}
+					/> */}
+				</div>
 				<div className='mb-6'>
 					<label
 						htmlFor='message'
