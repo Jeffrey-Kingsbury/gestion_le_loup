@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-import { FilePond, registerPlugin } from 'react-filepond';
+import { FilePond } from 'react-filepond';
 import 'filepond/dist/filepond.min.css';
 
-// Register plugins if needed
-// registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
-
-function FileUploader() {
+function FileUploader({ reset = false }) {
 	const [files, setFiles] = useState([]);
+	const clearfiles = () => {
+		setFiles([]);
+	};
 
+	if (reset) {
+		if (files.length > 0) clearfiles();
+	}
 	const getPresignedUrl = async (file) => {
 		try {
 			const response = await fetch(`https://api.web3forms.com/upload?file=${file.name}`);
@@ -24,9 +27,9 @@ function FileUploader() {
 			files={files}
 			onupdatefiles={setFiles}
 			allowMultiple={true}
-			maxFiles={3}
+			maxFiles={5}
 			name='attachment'
-			labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
+			labelIdle='Glissez-déposez vos fichiers ou <span class="filepond--label-action">Parcourir</span>'
 			server={{
 				process: async (fieldName, file, metadata, load, error, progress, abort, transfer, options) => {
 					try {

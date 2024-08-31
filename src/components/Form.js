@@ -4,32 +4,7 @@ import bg from '../images/northernlights.jpg';
 import FileUploader from './FileUploader';
 const Form = () => {
 	const [result, setResult] = useState(null);
-
-	const checkFiles = (e) => {
-		const files = e.target.files;
-		const size = 7000000; // 7MB
-		let err = '';
-		let totalSize = 0;
-		//check if all files total are over 7MB
-		for (let x = 0; x < files.length; x++) {
-			totalSize += files[x].size;
-		}
-		if (totalSize > size) {
-			err += 'La taille totale des fichiers est trop grande, veuillez choisir des fichiers plus petits \n(Max. 7MB)\n';
-		} else {
-			for (let x = 0; x < files.length; x++) {
-				if (files[x].size > size) {
-					err += files[x].name + ' est trop grand, veuillez choisir un fichier plus petit \n(Max. 7MB)\n';
-				}
-			}
-		}
-		if (err !== '') {
-			e.target.value = null; // discard selected file
-			alert(err);
-			return false;
-		}
-		return true;
-	};
+	const [success, setSuccess] = useState(false);
 
 	const onSubmit = async (event) => {
 		event.preventDefault();
@@ -45,9 +20,11 @@ const Form = () => {
 		if (res.success) {
 			setResult('Votre message a été envoyé avec succès!');
 			event.target.reset();
+			setSuccess(true);
 		} else {
 			setResult("Oops! Quelque chose s'est mal passé. Veuillez réessayer");
 		}
+		setSuccess(false);
 	};
 
 	return (
@@ -57,12 +34,20 @@ const Form = () => {
 				<h4>Veuillez nous contacter et l'un de nos spécialistes vous répondra sous peu</h4>
 				<br />
 			</span>
-			<form onSubmit={onSubmit}>
+			<form
+				method='POST'
+				action='https://api.web3forms.com/submit'
+			>
 				<div
 					className='text-white text-center'
 					style={{ fontSize: 'larger', textDecoration: 'underline' }}
 				>
 					{result}
+					<input
+						type='hidden'
+						name='access_key'
+						value='ae32d21c-cb9f-430c-83d7-d6fe791fb6a5'
+					/>
 				</div>
 				<div className='flex mb-3 space-x-4'>
 					<div className='w-full md:w-1/2'>
@@ -142,10 +127,9 @@ const Form = () => {
 					>
 						Attacher des images (.jpg / .png)
 					</label>
-					<FileUploader />
-					{/* <inputs
+					<FileUploader reset={success} />
+					{/* <input
 						type='file'
-						onChange={(e) => checkFiles(e)}
 						data-advanced='true'
 						name='attachment'
 						multiple
