@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="robots" content="noindex, nofollow"> <!-- Added to prevent indexing REMOVE IN PROD-->
+    <meta name="robots" content="noindex, nofollow" />
+    <!-- Added to prevent indexing REMOVE IN PROD-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestion Le Loup - High-End Renovation Contractor, Montreal</title>
@@ -43,20 +44,35 @@
     />
   </head>
   <body>
-    <header>
-      <nav class="container nav-bar">
+
+<header>
+    <nav class="container nav-bar">
         <a href="./" class="logo">
-          <img src="../images/Gestion-Le-Loup-Logo.png" alt="Gestion Le Loup Logo" height="80px" />
+            <img src="../images/Gestion-Le-Loup-Logo.png" alt="Gestion Le Loup Logo" height="80px" />
         </a>
-        <ul class="nav-menu">
+        
+        <button id="burger-button" class="burger-btn" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </button>
+
+        <ul class="nav-menu" id="mobile-menu">
+            <li>
+                <button id="close-menu-btn" class="close-menu-btn" aria-label="Close menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </li>
+            
           <li><a href="./services">Services</a></li>
           <li><a href="./about">About</a></li>
-          <li><a href="#contact" class="btn btn-primary">Contact Us</a></li>
+          <li><a href="./#contact" class="btn btn-primary">Contact Us</a></li>
           <li><a href="../" class="lang-switch">FR</a></li>
         </ul>
-      </nav>
-    </header>
-
+    </nav>
+</header>
     <main>
       <section class="hero">
         <div class="hero-content container">
@@ -91,6 +107,7 @@
             <p>Pressure-treated wood decks, cedar porches, and high-end exterior solutions.</p>
             <a href="./services">Learn more &rarr;</a>
           </div>
+          <div class="service-card-empty"></div>
           <div class="service-card">
             <h3>Disaster Recovery</h3>
             <p>Comprehensive post-disaster services to guide you through the reconstruction process.</p>
@@ -224,7 +241,12 @@
     <footer>
       <div class="container footer-content">
         <div class="footer-logo">
-          <img src="../images/Gestion-Le-Loup-Logo.png" alt="Gestion Le Loup Logo" height="80px" style="filter: invert()" />
+          <img
+            src="../images/Gestion-Le-Loup-Logo.png"
+            alt="Gestion Le Loup Logo"
+            height="80px"
+            style="filter: invert()"
+          />
         </div>
         <div class="footer-links">
           <a href="./services">Services</a>
@@ -233,7 +255,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2024 Gestion Le Loup. All rights reserved.</p>
+        <p>© 2025 Gestion Le Loup. All rights reserved.</p>
       </div>
     </footer>
 

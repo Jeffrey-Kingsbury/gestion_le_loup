@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         fileInput.addEventListener('click', (e) => {
-            e.target.value = null; 
+            fileInput.value = null; 
             e.stopPropagation();
         });
 
@@ -178,4 +178,38 @@ document.addEventListener('DOMContentLoaded', () => {
             return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
         }
     });
+});
+
+/* ========
+   MOBILE MENU TOGGLE
+   ======== */
+document.addEventListener('DOMContentLoaded', () => {
+    const burgerButton = document.getElementById('burger-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeButton = document.getElementById('close-menu-btn');
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    const body = document.body;
+
+    if (burgerButton && mobileMenu && closeButton) {
+        
+        const toggleMenu = () => {
+            mobileMenu.classList.toggle('mobile-menu-open');
+            body.classList.toggle('no-scroll');
+        };
+
+        // Open menu
+        burgerButton.addEventListener('click', toggleMenu);
+        
+        // Close menu
+        closeButton.addEventListener('click', toggleMenu);
+
+        // Close menu when a link is clicked (for anchor links like #portfolio)
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('mobile-menu-open')) {
+                    toggleMenu();
+                }
+            });
+        });
+    }
 });

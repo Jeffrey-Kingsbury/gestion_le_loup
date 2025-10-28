@@ -44,18 +44,33 @@
   </head>
   <body>
     <header>
-      <nav class="container nav-bar">
+    <nav class="container nav-bar">
         <a href="../" class="logo">
-          <img src="../../images/Gestion-Le-Loup-Logo.png" alt="Gestion Le Loup Logo" height="80px" />
+            <img src="../../images/Gestion-Le-Loup-Logo.png" alt="Gestion Le Loup Logo" height="80px" />
         </a>
-        <ul class="nav-menu">
-          <li><a href="../" class="active">Home</a></li>
+        
+        <button id="burger-button" class="burger-btn" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </button>
+
+        <ul class="nav-menu" id="mobile-menu">
+            <li>
+                <button id="close-menu-btn" class="close-menu-btn" aria-label="Close menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </li>
+            
+          <li><a href="../">Home</a></li>
           <li><a href="../services">Services</a></li>
-          <li><a href="#contact" class="btn btn-primary">Contact Us</a></li>
+          <li><a href="#contact-cta" class="btn btn-primary">Contact Us</a></li>
           <li><a href="../../about" class="lang-switch">FR</a></li>
         </ul>
-      </nav>
-    </header>
+    </nav>
+</header>
 
     <main>
       <section class="page-header">

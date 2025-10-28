@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-<meta name="robots" content="noindex, nofollow"> <!-- Added to prevent indexing REMOVE IN PROD-->
+    <!-- ===========================
+  !!! WARNING !!!
+  REMOVE THE FOLLOWING LINE IN PRODUCTION
+  =========================== -->
+    <meta name="robots" content="noindex, nofollow" />
+    <!-- ===========================
+  END WARNING
+  =========================== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestion Le Loup - Entrepreneur Rénovation Haut de Gamme, Montréal</title>
@@ -49,7 +56,34 @@
         <a href="./" class="logo">
           <img src="./images/Gestion-Le-Loup-Logo.png" alt="Gestion Le Loup Logo" height="80px" />
         </a>
-        <ul class="nav-menu">
+
+        <button id="burger-button" class="burger-btn" aria-label="Ouvrir le menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+
+        <ul class="nav-menu" id="mobile-menu">
+          <li>
+            <button id="close-menu-btn" class="close-menu-btn" aria-label="Fermer le menu">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </li>
+
           <li><a href="./services">Nos Services</a></li>
           <li><a href="./about">À Propos</a></li>
           <li><a href="#contact" class="btn btn-primary">Contactez-Nous</a></li>
@@ -92,6 +126,7 @@
             <p>Terrasses en bois traité, porches en cèdre et solutions extérieures haut de gamme.</p>
             <a href="./services">En savoir plus &rarr;</a>
           </div>
+          <div class="service-card-empty"></div>
           <div class="service-card">
             <h3>Reprise Après Sinistre</h3>
             <p>Services post-catastrophe complets pour vous guider tout au long de la reconstruction.</p>
@@ -173,7 +208,7 @@
                 </div>
 
                 <div class="form-group full-width">
-                  <label for="address">Address</label>
+                  <label for="address">Adresse</label>
                   <input type="text" id="address" name="address" placeholder="123 Rue, Ville, Code Postal" required />
                 </div>
 
@@ -219,7 +254,12 @@
     <footer>
       <div class="container footer-content">
         <div class="footer-logo">
-          <img src="./images/Gestion-Le-Loup-Logo.png" alt="Gestion Le Loup Logo" height="80px" style="filter: invert()" />
+          <img
+            src="./images/Gestion-Le-Loup-Logo.png"
+            alt="Gestion Le Loup Logo"
+            height="80px"
+            style="filter: invert()"
+          />
         </div>
         <div class="footer-links">
           <a href="./services">Nos Services</a>
@@ -228,7 +268,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2024 Gestion Le Loup. Tous droits réservés.</p>
+        <p>© 2025 Gestion Le Loup. Tous droits réservés.</p>
       </div>
     </footer>
 
