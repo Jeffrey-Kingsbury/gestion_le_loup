@@ -122,6 +122,23 @@ const Form = () => {
 
 				<div className='mb-6'>
 					<label
+						htmlFor='address'
+						className='block text-sm mb-2 text-gray-200'
+					>
+						Address
+					</label>
+					<input
+						type='text'
+						name='address'
+						id='address'
+						placeholder='123 Rue, Ville, Pays, Code Postal'
+						required
+						className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
+					/>
+				</div>
+
+				<div className='mb-6'>
+					<label
 						htmlFor='attachment'
 						className='block mb-2 text-sm text-gray-200'
 					>

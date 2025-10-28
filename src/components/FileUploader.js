@@ -12,6 +12,11 @@ function FileUploader({ reset = false }) {
 		if (files.length > 0) clearfiles();
 	}
 	const getPresignedUrl = async (file) => {
+		if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
+			alert('Seuls les fichiers .jpg et .png sont autorisés.');
+			clearfiles();
+			return;
+		}
 		try {
 			const response = await fetch(`https://api.web3forms.com/upload?file=${file.name}`);
 			const data = await response.json();
